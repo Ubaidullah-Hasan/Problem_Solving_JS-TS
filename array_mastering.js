@@ -10,3 +10,19 @@ const fourthEle = sixElementsOfArr[3];
 console.log(fourthEle);
 
 // T-004: Use the for loop on the above array to print elements in the odd index.
+for (let i = 1; i < sixElementsOfArr.length; i = i + 2) {
+    console.log(sixElementsOfArr[i]);
+}
+
+// T-005: Add one element at the front and the end of an array.
+const number = ["one", "two", "three", "four", "five", "six"];
+number.push("seven");
+number.unshift("zero");
+console.log(number);
+
+// T-006: Remove an element from the front and the end of an array.
+const numInWord = ["one", "two", "three", "four", "five", "six"];
+numInWord.shift();
+numInWord.pop();
+console.log(numInWord);
+
