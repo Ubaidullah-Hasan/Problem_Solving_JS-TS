@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .chart-container {
+            width: 600px;
+            height: 400px;
+            position: relative;
+            margin: auto;
+        }
+
+        .line-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .line {
+            stroke: #3EB7A7;
+            stroke-width: 2;
+            fill-opacity: 0;
+        }
+
+        .dot {
+            fill: #3EB7A7;
+            stroke: #ffffff;
+            stroke-width: 2;
+        }
+
+        .text-label {
+            font-size: 12px;
+            fill: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <svg class="line-chart" viewBox="0 0 600 400">
+            <!-- Gradient -->
+            <defs>
+                <!-- Gradient -->
+                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#3EB7A7" stop-opacity="0.8"></stop>
+                    <stop offset="100%" stop-color="#3EB7A7" stop-opacity="0"></stop>
+                </linearGradient>
+            
+                <!-- Clipping Path -->
+                <clipPath id="clip">
+                    <path d="M70,300 L170,280 L270,260 L370,220 L470,170 L470,350 L70,350 Z" />
+                </clipPath>
+            </defs>
+            
+            <!-- Line -->
+            <path class="line" d="M70,300 L170,280 L270,260 L370,220 L470,170" />
+            
+            <!-- Gradient Area -->
+            <rect x="50" y="0" width="500" height="350" fill="url(#gradient)" clip-path="url(#clip)" />
+
+            <!-- Axes -->
+            <line x1="50" y1="350" x2="550" y2="350" stroke="#ccc" stroke-width="1" />
+
+            <!-- Horizontal Grid Lines -->
+            <line x1="50" y1="300" x2="550" y2="300" stroke="#ccc" stroke-width="1" />
+            <line x1="50" y1="260" x2="550" y2="260" stroke="#ccc" stroke-width="1" />
+            <line x1="50" y1="220" x2="550" y2="220" stroke="#ccc" stroke-width="1" />
+            <line x1="50" y1="180" x2="550" y2="180" stroke="#ccc" stroke-width="1" />
+
+
+            <!-- Dots and Labels -->
+            <!-- <circle class="dot" cx="70" cy="300" r="8" /> -->
+            <g transform="rotate(45 70 300)">
+                <rect class="dot" x="62" y="292" width="16" height="16" />
+            </g>
+            <text class="text-label" x="50" y="325">10,000</text>
+
+            <g transform="rotate(45 170 280)">
+                <rect class="dot" x="162" y="272" width="16" height="16" />
+            </g>
+            <text class="text-label" x="150" y="305">10,923</text>
+
+            <g transform="rotate(45 270 260)">
+                <rect class="dot" x="262" y="252" width="16" height="16" />
+            </g>
+            <text class="text-label" x="250" y="285">12,350</text>
+
+            <g transform="rotate(45 370 220)">
+                <rect class="dot" x="362" y="212" width="16" height="16" />
+            </g>
+            <text class="text-label" x="350" y="245">13,539</text>
+
+            <g transform="rotate(45 470 170)">
+                <rect class="dot" x="462" y="162" width="16" height="16" />
+            </g>
+            <text class="text-label" x="450" y="195">15,203</text>
+
+
+            <!-- X-Axis Labels -->
+            <text class="text-label" x="45" y="370">1 July '19</text>
+            <text class="text-label" x="145" y="370">1 July '20</text>
+            <text class="text-label" x="245" y="370">1 July '21</text>
+            <text class="text-label" x="345" y="370">1 July '22</text>
+            <text class="text-label" x="445" y="370">1 July '23</text>
+
+            <!-- Y-Axis Labels -->
+            <text class="text-label" x="0" y="300">10,000</text>
+            <text class="text-label" x="0" y="260">12,000</text>
+            <text class="text-label" x="0" y="220">14,000</text>
+            <text class="text-label" x="0" y="180">15,000</text>
+
+            <!-- <text class="text-label" x="15" y="140">18,000</text> -->
+            <text class="text-label" x="15" y="350">0</text>
+        </svg>
+    </div>
+</body>
+
+</html>
