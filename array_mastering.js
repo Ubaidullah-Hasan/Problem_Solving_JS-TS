@@ -45,4 +45,25 @@ console.log(strawberry);
 
 // T-008: Take out the last 8 food items from the above array using the Array destructuring. Hint: rest parameter.
 const [, , ...rest] = fruitEmojis;
-console.log(rest)
+console.log(rest);
+
+// T-009: Clone an Array(Shallow cloning)
+const fruits = [
+    "🍎", // Apple
+    "🍌", // Banana
+    "🍇", // Grapes
+    "🍊", // Orange
+    "🍉", // Watermelon
+    "🍓", // Strawberry
+    "🍍", // Pineapple
+    "🥭", // Mango
+    "🍑", // Peach
+    "🍈"  // Melon
+];
+const cloneFruits = fruits.slice();
+console.log(cloneFruits);
+
+// T-010: Empty an array using its length property
+const arr10 = [1, 2, 3, 4, 5]
+arr10.length = 0;
+console.log(arr10);
