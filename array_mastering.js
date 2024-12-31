@@ -26,3 +26,23 @@ numInWord.shift();
 numInWord.pop();
 console.log(numInWord);
 
+// T-007: Create an array containing the name of your favourite foods(10 foods). Destructure the 6th food element from the array using destructuring.
+const fruitEmojis = [
+    "🍎", // Apple
+    "🍌", // Banana
+    "🍇", // Grapes
+    "🍊", // Orange
+    "🍉", // Watermelon
+    "🍓", // Strawberry
+    "🍍", // Pineapple
+    "🥭", // Mango
+    "🍑", // Peach
+    "🍈"  // Melon
+];
+
+const [, , , , , strawberry] = fruitEmojis;
+console.log(strawberry);
+
+// T-008: Take out the last 8 food items from the above array using the Array destructuring. Hint: rest parameter.
+const [, , ...rest] = fruitEmojis;
+console.log(rest)
