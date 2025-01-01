@@ -72,7 +72,7 @@ arr10.length = 0;
 {
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     for (let i = 0; i < nums.length; i++) {
-        if(nums[i] === 5){
+        if (nums[i] === 5) {
             nums.length = 6;
             // console.log(nums[i])
             break;
@@ -83,7 +83,39 @@ arr10.length = 0;
 
 // T-012: Create an Array of 10 elements. Use the splice() method to empty the array.
 {
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     nums.splice(0);
-    console.log(nums) 
+    // console.log({nums}) 
+    // nums = []
+    // console.log(nums)
 }
+
+// T-013: Create an Array of 10 elements. You can empty the array in multiple ways: using the length property, using the pop() method, using the shift() method, setting the array with [], or the splice() method. Which among these methods are most efficient and why?
+
+/** =================
+
+ * length = 0:
+    Efficiency: Most efficient.
+    Reason: This operation resets the array in constant time (O(1)), regardless of the size of the array.
+    Use Case: Best when you simply want to clear the array without preserving references.
+ * Setting to []:
+    Efficiency: Very efficient.
+    Reason: Assigning a new empty array is a constant time operation (O(1)), similar to length = 0. However, any references to the old array are preserved, which may not clear all memory in use.
+    Use Case: Best when you want to completely replace the array.
+
+================= */
+
+// T-014: What happens when you concatenate two empty arrays?
+//  it return a different reference empty array
+{
+    const arr1 = [];
+    const arr2 = [];
+    // console.log(arr1.concat(arr2))
+}
+
+// T-015: How can you check if a value is partially matching with any of the elements of an Array?
+{
+    let fruits = ["apple", "banana", "cherry", "grape"];
+    const isPartialMatch = fruits.some(fruit => fruit.includes("app")); // "app" আংশিক মিল খোঁজে
+    console.log(isPartialMatch);
+} 
