@@ -117,5 +117,57 @@ arr10.length = 0;
 {
     let fruits = ["apple", "banana", "cherry", "grape"];
     const isPartialMatch = fruits.some(fruit => fruit.includes("app")); // "app" আংশিক মিল খোঁজে
-    console.log(isPartialMatch);
-} 
+    // console.log(isPartialMatch);
+}
+
+//  T-017: Create an Array of alphanumeric strings. Sort the elements in both ascending and descending orders. You must be doing this in an immutable way such that the source array never gets modified.
+{
+    // ascending
+    let alphanumericArray = [
+        "123jip",
+        "A1B2C3",
+        "123ABC",
+        "XYZ789",
+        "45D67E",
+        "MNO456",
+        "PQR123",
+        "789GHI",
+    ];
+
+    const result = alphanumericArray.toSorted();
+    // console.log(result)
+    // console.log(alphanumericArray)
+
+    // descending
+    const descendingOrd = alphanumericArray.toSorted(function (a, b) {
+        if (b < a) {
+            return 1
+        } else if (b > a) {
+            return -1
+        } else {
+            return 0
+        }
+        // or use array function
+    })
+    // console.log(descendingOrd)
+}
+
+// T-018: Can you give examples of sparse and dense arrays?
+let sparseArray = [1, , , 4];
+// console.log(sparseArray);
+let denseArray = [1, 2, 3, 4];
+// console.log(denseArray);
+
+
+// T-019: Give a practical usages of the .fill() method
+const fill = [1, 5, 3, 4, 5, 6, 7];
+fill.fill(2, 2,4);
+// console.log(fill)
+
+// T-020: How to convert an array to a string?
+{
+    const arr = ["hello", "world"];
+    const arrToStr = arr.join(" ");
+    // console.log(arrToStr);
+}
+
