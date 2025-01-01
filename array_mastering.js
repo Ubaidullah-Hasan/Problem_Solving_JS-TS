@@ -67,3 +67,16 @@ console.log(cloneFruits);
 const arr10 = [1, 2, 3, 4, 5]
 arr10.length = 0;
 console.log(arr10);
+
+// T-011: Create an array of 10 elements(number 1 to 10). Resize the array to length 6 once you find the number 5 in that array. Hint: Use for-loop.
+{
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[i] === 5){
+            nums.length = 6;
+            console.log(nums[i])
+            break;
+        }
+    }
+    console.log(nums)
+}
