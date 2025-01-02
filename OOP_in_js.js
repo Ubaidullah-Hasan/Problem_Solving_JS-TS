@@ -90,9 +90,34 @@ pilot.speak();
 }
 
 
-// Question 5: Checking Instance Type
-// Create an instance of 'Dog' and check if it is an instance of 'Dog' and 'Animal' classes.
-// Log the results.
+{
+    // Question 5: Checking Instance Type
+    // Create an instance of 'Dog' and check if it is an instance of 'Dog' and 'Animal' classes.
+    // Log the results.
+    // Parent Class
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+            console.log(`${this.name} is calling.`);
+        }
+    }
+
+    // Child Class
+    class Dog extends Animal {
+        constructor(name) {
+            super(name);
+        }
+    }
+
+    // Create an instance of Dog
+    const pilot = new Dog("Pilot");
+
+    // Check instance types
+    console.log(pilot instanceof Dog);     // true
+    console.log(pilot instanceof Animal);  // true
+}
 
 
 // Happy Coding! Try to solve each question step-by-step and understand the concept of inheritance in JavaScript Classes.
