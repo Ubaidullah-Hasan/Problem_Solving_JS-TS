@@ -69,17 +69,48 @@ Create a class `MathUtils` with a static method `add` that takes two numbers and
 ================ */
 {
     class MathUtils {
-        static add(a, b) {
-            return a + b;
+        static add(...numbers) {
+            return numbers.reduce((acc, num) => num + acc, 0);
         }
     }
-    console.log(MathUtils.add(2, 3))
+    const result = MathUtils.add(20, 30);
+    // console.log(result);
 }
 
 /* ================
 5. Getters and Setters
 Create a class `Rectangle` with properties`width` and`height`.Add getter methods for `area` and`perimeter`.Add a setter for `width` that ensures it cannot be negative.
 ================ */
+{
+    class Rectangle {
+        #width
+        #height
+
+        constructor(width, height) {
+            this.#width = width;
+            this.#height = height;
+        }
+        area() {
+            const area = this.#width * this.#height;
+            const perimeter = 2 * (this.#width + this.#height);
+            return { area, perimeter };
+        }
+
+        validatedWidth(newWidth) {
+            if (newWidth < 0) {
+                console.log("Width can't be negative.")
+            } else {
+                this.#width = newWidth
+            }
+        }
+    }
+    const newRectangle = new Rectangle(20, 10);
+    const bigArea = newRectangle.area();
+    newRectangle.validatedWidth(10);
+    const newArea = newRectangle.area();
+    console.log(bigArea,newArea);
+}
+// 2 no class problem for mine
 {
     class Rectangle {
         #width;
@@ -103,7 +134,7 @@ Create a class `Rectangle` with properties`width` and`height`.Add getter methods
         }
 
         // Setters
-        setNewValueOfWidth(hei){
+        setNewValueOfWidth(hei) {
             this.#height = hei;
         }
 
@@ -111,7 +142,7 @@ Create a class `Rectangle` with properties`width` and`height`.Add getter methods
     const firstRec = new Rectangle(300, 200);
     console.log(firstRec.width) // undefined
     console.log(firstRec.getWidthAndHdight());
-    firstRec.setNewValueOfWidth(1000)
+    firstRec.setNewValueOfWidth(1000);
     console.log(firstRec.getWidthAndHdight());
 }
 
